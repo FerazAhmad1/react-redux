@@ -29,6 +29,16 @@ export const decrement2 = () => {
     type: DECREMENTBY2,
   };
 };
+export const decrement5 = () => {
+  return {
+    type: "decrement5",
+  };
+};
+export const increment5 = () => {
+  return {
+    type: "increment5",
+  };
+};
 const counterReducer = (state = initialState, action) => {
   if (action.type === INCREAMENT) {
     return {
@@ -55,6 +65,16 @@ const counterReducer = (state = initialState, action) => {
     };
   }
 
+  if (action.type === "increment5") {
+    return {
+      counter: state.counter + 5,
+    };
+  }
+  if (action.type === "decrement5") {
+    return {
+      counter: state.counter - 5,
+    };
+  }
   return state;
 };
 
